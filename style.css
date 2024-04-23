@@ -146,6 +146,135 @@ body {
     display: block;
 }
 
+.sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover {
+    background: #1d1b31;
+    color: #000;
+}
+
+.sidebar .nav-links li .iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar.close .nav-links li .iocn-link {
+    display: block
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li.showMenu i.arrow {
+    transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow {
+    display: none;
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    transition: all 0.4s ease;
+}
+
+.sidebar.close .nav-links li a .link_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu {
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #000;
+    display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu {
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link_name {
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .sidebar .nav-links li .sub-menu a {
     color: #fff;
     font-size: 15px;
@@ -303,20 +432,46 @@ body {
 
 /* Responsive styles */
 
+
+/* Media Query for Sidebar */
+
+
+/* Media Query for Sidebar */
+
+
+/* Media Query for Sidebar */
+
+@media (max-width: 400px) {
+    /* Adjusted styles for li hover */
+    .sidebar .nav-links li:hover {
+        background: #1d1b31 !important;
+        color: #fff !important;
+    }
+    /* Adjusted styles for link name */
+    .sidebar .nav-links li:hover .link_name {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+    /* Adjusted styles for sub-menu */
+    .sidebar .nav-links li:hover .sub-menu {
+        display: block !important;
+    }
+}
+
 @media (max-width: 500px) {
     .sidebar.close .nav-links li .sub-menu {
-        display: none;
+        display: block;
     }
     .sidebar {
         width: 78px;
     }
     .sidebar.close {
-        width: 0;
+        width: 100%;
     }
     .home-section {
         left: 78px;
         width: calc(100% - 78px);
-        z-index: 100;
+        z-index: 400;
     }
     .sidebar.close~.home-section {
         width: 100%;
@@ -865,5 +1020,212 @@ svg {
         margin-right: 5%;
         font-weight: bolder;
         font-size: 10px;
+    }
+}
+
+
+/* Media Query for Sidebar and Home Section */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+        /* Adjust sidebar width */
+    }
+    .sidebar.close {
+        width: 78px;
+        /* Ensure sidebar collapses properly */
+    }
+    .sidebar .nav-links li .iocn-link {
+        display: none;
+        /* Hide icon links */
+    }
+    .sidebar .nav-links li a .link_name {
+        font-size: 16px;
+        /* Adjust font size */
+    }
+    .home-section {
+        left: 200px;
+        /* Adjust home section position */
+        width: calc(100% - 200px);
+        /* Adjust width */
+    }
+    .sidebar.close~.home-section {
+        left: 78px;
+        /* Adjust home section position when sidebar is closed */
+        width: calc(100% - 78px);
+        /* Adjust width */
+    }
+    .home-section .home-content .text {
+        font-size: 20px;
+        /* Adjust font size */
+    }
+}
+
+
+/* Media Query for Event Container */
+
+@media (max-width: 700px) {
+    .event_contain {
+        flex-direction: column;
+        /* Adjust layout for smaller screens */
+        padding: 15px;
+        /* Adjust padding */
+    }
+    .left,
+    .right {
+        width: 100%;
+        /* Adjust width */
+        border: none;
+        /* Remove borders */
+        margin-right: 0;
+        /* Reset margin */
+        margin-bottom: 20px;
+        /* Add margin for separation */
+    }
+    .circle {
+        width: 150px;
+        /* Adjust circle size */
+        height: 150px;
+        /* Adjust circle size */
+    }
+    .titlecircle {
+        font-size: 18px;
+        /* Adjust font size */
+    }
+    .detail_circle p {
+        width: auto;
+        /* Allow text to wrap */
+        font-size: 16px;
+        /* Adjust font size */
+        line-height: 1.5;
+        /* Adjust line height */
+    }
+    .blue_details,
+    .vieulette_details {
+        width: 100%;
+        /* Adjust width */
+        justify-content: flex-start;
+        /* Align items to start */
+    }
+    .blue_details span,
+    .vieulette_details span {
+        font-size: 14px;
+        /* Adjust font size */
+    }
+}
+
+
+/* Media Query for Profile Details */
+
+@media (max-width: 1200px) {
+    .sidebar .profile-details {
+        width: 200px;
+        /* Adjust width */
+    }
+    .sidebar.close .profile-details {
+        width: 78px;
+        /* Adjust width when sidebar is closed */
+    }
+    .sidebar .profile-details img {
+        height: 42px;
+        /* Adjust image height */
+        width: 42px;
+        /* Adjust image width */
+        margin: 0 10px 0 8px;
+        /* Adjust margin */
+    }
+    .sidebar.close .profile-details img {
+        padding: 8px;
+        /* Adjust padding when sidebar is closed */
+    }
+    .sidebar .profile-details .profile-content {
+        display: flex;
+        /* Ensure flex layout */
+        align-items: center;
+        /* Align items to center */
+        justify-content: flex-start;
+        /* Align content to start */
+        flex-direction: row;
+        /* Arrange items horizontally */
+    }
+    .sidebar .profile-details .profile_name,
+    .sidebar .profile-details .job {
+        font-size: 14px;
+        /* Adjust font size */
+        white-space: nowrap;
+        /* Prevent text wrapping */
+        overflow: hidden;
+        /* Hide overflow */
+        text-overflow: ellipsis;
+        /* Show ellipsis for overflowed text */
+    }
+}
+
+
+/* Media Query for medium-sized devices */
+
+@media (max-width: 992px) {
+    .sidebar .profile-details {
+        width: 180px;
+        /* Adjust width */
+    }
+    .sidebar .profile-details img {
+        height: 40px;
+        /* Adjust image height */
+        width: 40px;
+        /* Adjust image width */
+        margin: 0 8px;
+        /* Adjust margin */
+    }
+    .sidebar .profile-details .profile_name,
+    .sidebar .profile-details .job {
+        font-size: 13px;
+        /* Adjust font size */
+    }
+}
+
+
+/* Media Query for small-sized devices */
+
+@media (max-width: 768px) {
+    .sidebar .profile-details {
+        width: 160px;
+        /* Adjust width */
+    }
+    .sidebar .profile-details img {
+        height: 36px;
+        /* Adjust image height */
+        width: 36px;
+        /* Adjust image width */
+        margin: 0 6px;
+        /* Adjust margin */
+    }
+    .sidebar .profile-details .profile_name,
+    .sidebar .profile-details .job {
+        font-size: 12px;
+        /* Adjust font size */
+    }
+}
+
+
+/* Media Query for extra small-sized devices */
+
+@media (max-width: 576px) {
+    .sidebar .profile-details {
+        width: 140px;
+        /* Adjust width */
+    }
+    .sidebar .profile-details img {
+        height: 32px;
+        /* Adjust image height */
+        width: 32px;
+        /* Adjust image width */
+        margin: 0 4px;
+        /* Adjust margin */
+    }
+    .sidebar .profile-details .profile_name,
+    .sidebar .profile-details .job {
+        font-size: 11px;
+        /* Adjust font size */
     }
 }
