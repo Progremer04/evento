@@ -549,7 +549,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    width: 80%;
+    width: 100%;
 }
 
 .card {
@@ -822,9 +822,6 @@ svg {
     background-color: #333;
 }
 
-
-/* Event Container */
-
 .event_contain {
     display: flex;
     width: 100%;
@@ -834,24 +831,25 @@ svg {
 
 .left {
     width: 95%;
+    height: 500px;
     margin-right: auto;
-    border-right: 5px solid #F8F8FA;
+    border-right: 5px solid #E4E9F7;
     background-color: rgb(250, 255, 255);
     padding: 9px;
-    height: auto;
 }
 
 .left img {
     width: 100%;
+    height: 450px;
 }
 
 .right {
     width: 45%;
+    height: 500px;
     margin-right: auto;
-    border-left: 5px solid #F8F8FA;
+    border-left: 5px solid #E4E9F7;
     background-color: rgb(250, 255, 255);
     padding: 9px;
-    height: auto;
 }
 
 .titlecircle {
@@ -879,6 +877,9 @@ svg {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
+
+/* center text */
 
 .detail_circle {
     width: auto;
@@ -919,58 +920,36 @@ svg {
     margin-right: 10px;
 }
 
-
-/* Media Query for Event Container */
-
 @media (max-width: 700px) {
     .event_contain {
         display: flex;
         width: 100%;
         height: auto;
-        background-color: #E4E9F7;
-        padding: 5px;
+        padding: 25px;
+        flex-direction: column;
     }
     .left {
-        width: 50%;
-        height: auto;
+        width: 100%;
+        height: 500px;
         margin-right: auto;
-        border-right: 5px solid #E4E9F7;
+        border-bottom: 15px solid #E4E9F7;
         background-color: rgb(250, 255, 255);
-        padding: 9px;
+        padding: 19px;
     }
     .left img {
         width: 100%;
+        height: 400px;
     }
     .right {
-        width: 50%;
-        height: auto;
+        width: 100%;
+        height: 300px;
         margin-right: auto;
-        border-left: 5px solid #E4E9F7;
+        border-top: 5px solid #E4E9F7;
         background-color: rgb(250, 255, 255);
         padding: 9px;
     }
     .titlecircle {
         font-size: 15px;
-    }
-    .circle {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: #f3f3f3;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-top: auto;
-        border: 5px solid slateblue;
-        clip-path: inset(0 0 0 0 round 50%);
-    }
-    .center_text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
     }
     .detail_circle {
         width: auto;
@@ -980,10 +959,8 @@ svg {
         padding: 5px;
     }
     .detail_circle p {
-        width: 147px;
+        width: 50%;
         height: 31px;
-        gap: 0px;
-        opacity: 0px;
         font-family: Inter;
         font-size: 26px;
         font-weight: 700;
@@ -995,17 +972,14 @@ svg {
         margin-right: auto;
         display: flex;
         width: 50%;
+        height: 50%;
     }
     .vieulette_details {
-        width: 15px;
-        height: 15px;
         margin-left: auto;
         display: flex;
         width: 50%;
     }
     .blue_details span {
-        width: 15px;
-        height: 15px;
         background-color: blue;
         border-radius: 100%;
         margin-right: 5%;
@@ -1057,59 +1031,6 @@ svg {
     }
     .home-section .home-content .text {
         font-size: 20px;
-        /* Adjust font size */
-    }
-}
-
-
-/* Media Query for Event Container */
-
-@media (max-width: 700px) {
-    .event_contain {
-        flex-direction: column;
-        /* Adjust layout for smaller screens */
-        padding: 15px;
-        /* Adjust padding */
-    }
-    .left,
-    .right {
-        width: 100%;
-        /* Adjust width */
-        border: none;
-        /* Remove borders */
-        margin-right: 0;
-        /* Reset margin */
-        margin-bottom: 20px;
-        /* Add margin for separation */
-    }
-    .circle {
-        width: 150px;
-        /* Adjust circle size */
-        height: 150px;
-        /* Adjust circle size */
-    }
-    .titlecircle {
-        font-size: 18px;
-        /* Adjust font size */
-    }
-    .detail_circle p {
-        width: auto;
-        /* Allow text to wrap */
-        font-size: 16px;
-        /* Adjust font size */
-        line-height: 1.5;
-        /* Adjust line height */
-    }
-    .blue_details,
-    .vieulette_details {
-        width: 100%;
-        /* Adjust width */
-        justify-content: flex-start;
-        /* Align items to start */
-    }
-    .blue_details span,
-    .vieulette_details span {
-        font-size: 14px;
         /* Adjust font size */
     }
 }
@@ -1227,5 +1148,135 @@ svg {
     .sidebar .profile-details .job {
         font-size: 11px;
         /* Adjust font size */
+    }
+}
+
+
+/* <nav>
+            <div class="nav_logo">
+                <h3>Evento</h3>
+            </div>
+            <div class="gridnavclass">
+                <div class="griditeamnav">
+                    <div class="navbtn">
+                        <a href="#">Create Event</a>
+                    </div>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Frame147.svg" alt="">
+                    <p>Dashboard</p>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Frame148.svg" alt="">
+                    <p>Event List</p>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Frame149.svg" alt="">
+                    <p>Speakers list</p>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Frame149.svg" alt="">
+                    <p>Speakers list</p>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Frame150.svg" alt="">
+                    <p>ressourses list</p>
+                </div>
+                <div class="griditeamnav">
+                    <img src="/logos/Moneybag.svg" alt="" srcset="">
+                    <p>Fiance</p>
+                </div>
+                <div class="griditeamnav">
+                    <div class="profilenav"></div>
+                </div>
+            </div>
+        </nav>
+         */
+
+nav {
+    display: none;
+    padding: 15px;
+    grid-template-columns: repeat(1fr, 1fr);
+    width: auto;
+    height: 605px;
+    background-color: #fff;
+    transition: all 0.6s;
+    /* margin-bottom: 24px; */
+}
+
+.nav_logo {
+    width: 215px;
+    height: 67px;
+    margin-bottom: 57px;
+}
+
+.nav_logo p {
+    color: #060040;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.gridnavclass {
+    display: grid;
+    grid-template-rows: repeat(1fr, auto);
+    grid: 10px;
+}
+
+.griditeamnav {
+    display: flex;
+    width: 291px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.griditeamnav p {
+    margin-left: 20px;
+}
+
+.navbtn {
+    width: 291px;
+    height: 40px;
+    background-color: #8B5AFE;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 0px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.navbtn a {
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: grid;
+    }
+    .sidebar.close {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .home-section,
+    .home-section {
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+    .sidebar.close~.home-section {
+        left: 0;
+        width: 100%;
+    }
+    #romove {
+        visibility: hidden;
+    }
+    .home-section {
+        padding: 10px;
+        transition: all 0.6s;
     }
 }
